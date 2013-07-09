@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'ArraysOfTheWeek' target in the 'ArraysOfTheWeek' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif

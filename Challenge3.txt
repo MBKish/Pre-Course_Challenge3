@@ -1,0 +1,360 @@
+Challenge 3
+
+Section 1 - Getting Started
+
+1.1 Installing the tools 4m 42s
+Install Xcode and register as an Apple Developer.
+
+1.2 Creating your first application 11m 28s
+Create your first application using the same steps Simon describes in the video. Familiarize yourself with the Xcode environment, specifically notice how it can be manipulated to display different helper tools and how it will attempt to fill in your code as you type it.
+
+1.3 Updates to this course 3m 31s
+Question: Why do you think it's important to be aware of the idiosyncracies with older versions of Objective-C and to keep up with new features as they are added?
+Answer: When learning a language it is best to learn the most updated version. At the same time, we should aware that if we were to see code made before these updates to Objective-C, we would know how to handle it.
+
+
+Section 2 - Objective-C Basics
+
+2.1 The Objective-C language 4m 11s
+Question: How did Objective-C become the language to learn if you want to make apps for the iPhone and iPad?
+Answer: Objective-C was built into Mac OS X in 2001; which the iPhone's operating system was built on in 2007. iOS and Mac OS X are still both built with Objective-C. 
+
+2.2 The structure of an Objective-C program 6m 15s
+Create a new project. Go to the menu option Xcode/Preferences/Text_Editing and make sure "Line Numbers" is checked in the section marked "Show." Then add comments describing the purpose of each auto-generated line in the main.m file. For example on Line 17 I would write: " NSLog(@"Hello, World!"); //instructs the console to output the phrase "Hello, World!")"
+
+2.3 Compiling and running your code 8m 37s
+Question: Why might you build in one version of iOS but deploy in an older version?
+Answer: You want to build with the latest version because you want it to take advantage of the latest changes and fixes. At the same time you may want it to still run on older systems so you would set a deployment target to an older version of the software.
+
+
+Section 3 - Program Flow
+
+3.1 Logging messages to the command line 6m 7s
+Following the example in the video, write a program that calculates and outputs to the console the number of seconds in ten years. Copy and paste your code here.
+
+		int minutes = 60;
+        int hours = 24;
+        int days = 365;
+        
+        int minutesInAYear = minutes * hours * days;
+        int minutesInADecade = minutesInAYear * 10;
+        
+        NSLog(@"There are %i minutes in a year and %i minutes in a decade.", minutesInAYear, minutesInADecade);
+
+3.2 Writing conditional code 7m 1s
+Using Objective-C, create an integer variable called "day" that represents the days of the week. Write an if statement that checks whether "day" is a weekend day. If the day is a weekend day then have your program print a message saying "Have a nice weekend!" and if it's not, print a message saying "I hope you're having a good week!"
+-- In DayOfTheWeek:
+
+        int day = 3;
+        //Sun = 0, Mon = 1, Tue = 2, Wed = 3, Thu = 4, Fri = 5, Sat = 6
+        
+        if ((day > 0) && (day < 6)) {
+            NSLog(@"I hope you're having a good week!");
+        } else {
+            NSLog(@"Have a nice weekend!");
+        }
+
+3.3 The switch statement 5m 58s
+Create a variable called "hurricaneCategory" and a switch statement that prints out a message describing a hurricane's category from 1-5.
+-- In HurricaneCategory:
+
+		int hurricaneCategory = 4;
+        //between 1 and 5
+        
+        switch (hurricaneCategory) {
+            case 1:
+                NSLog(@"It's a category 1 hurricane - 74-95 mph - Very dangerous winds will produce some damage");
+                break;
+            case 2:
+                NSLog(@"It's a category 2 hurricane - 96-110 mph - Extremely dangerous winds will cause extensive damage");
+                break;
+            case 3:
+                NSLog(@"It's a category 3 hurricane - 111-129 mph - Devastating damage will occur");
+                break;
+            case 4:
+                NSLog(@"It's a category 4 hurricane - 130-156 mph - Catastrophic damage will occur");
+                break;
+            case 5:
+                NSLog(@"It's a category 5 hurricane - 157 mph or higher - Catastrophic damage will occur");
+                break;
+            default:
+                NSLog(@"Ask again later");
+                break;
+        }
+
+3.4 Code snippets 5m 15s
+Grab a code snippet, indent it to match the indent of your project, then add comments to it, then select the entire snippet you just modified and save it as your own code snippet. Time yourself and record how many seconds it takes you to do all this.
+
+51 seconds to drag an if/else over, re-indent it, fill in the comments, reselect it, drag it to the save window, and rename it "My if else":
+        if (a > 1) {
+            NSLog(@"Log if");
+        } else {
+            NSLog(@"Log else");
+        }
+
+3.5 Operators and expressions 11m 8s
+List the 6 types of operators described in this video. Provide their name, a description of their meaning, and the syntax you would use to execute them. 
+1. Arithmetic - Mathematic operators used in expressions. Syntax: result = a + b
+2. Comparison - Compare one variable to another. Syntax: if (a != b){ ...
+3. Modulus - Calculates a remainder in devision. Syntax: int remainder = a % 50;
+4. Increment/Decrement - adds or increases a value by a set amount. Syntax: a++; or a -= 1;
+5. Prefix/Postfix - operators that come before or after the variable name. Syntax: ++a, a--
+6. Ternary - Allows you to set a variable based on a condition check. Syntax: int x = (z > y) ? z : y;
+Question: What code snippet does the ternary operator replace?
+Answer: It replaces an If Else statement, because it checks a boolean condition is met.
+
+3.6 Loops 8m 53s
+CHALLENGE: Think of a scenario while using a mobile app that might require you to use a "continue" statement in the middle of a loop.
+Answer: If you have an alarm set to wake you up every weekday at 6:00, it would check to see which day of the week it was and for every weekday an alarm would go off. As soon as you hit 6:00 on Saturday it would hit that continue and not have the alarm go off. The same would occur for Sunday, but would then activate the alarm properly on Monday morning.
+
+3.7 Functions 10m 16s
+Question 1: What is a function? 
+Answer 1: A part of code that is packed up and given a name to be called later. Once called, the function will perform the code within it.
+
+Question 2: What is a function prototype?
+Answer 2: It is a description clarification of a function to basically say that a function exists and it is coming up in the code.
+
+Question 3: What are the purposes of each?
+Answer 3: The purpose of a function is to break apart your code into more manageable areas that can be called at any time. A function prototype is a pseudo-declaration to allow the code to build because your function is defined later within your code. 
+
+Question 4: What are the rules for when and how you can call a function?
+Answer 4: You can only call a function once it has been defined unless you have a prototype in place for it. Also, I would imagine that if your function has parameters, you must meet those parameters before calling your function.
+
+
+Section 4 - Variables
+
+4.1 Data types 7m 6s
+Question: What are the primitive data types in Objective-C? Why did Apple add a set of classes to handle other data types?
+Answer: The primitive data types are int (integer), float (floating point variable), double (double the size of a normal float), char (single character), and BOOL (true or false). Apple create these classes to make it much easier when using common data types outside of the primitives; like date (NSDate) and string (NSString).
+
+4.2 Working with numbers 9m 33s
+Make a table of Objective-C primitive data types. Add numeric data types and their properties to this table.
+--See DataTypes.xls
+
+4.3 Working with characters 4m 39s
+Add char and BOOL (the character data types) to your table created above.
+--See DataTypes.xls
+
+4.4 Variable scope 8m 6s
+Question: Describe in your own words what the scope of a variable is in Objective-C
+Answer: Variable scope is basically how far a variable can be used based on when it is defined/declared. For instance, if a variable is defined within a for loop or a function, you would not have access to that variable outside. If a variable is declared as a global variable it can be used throughout the entire application.
+
+4.5 Enumerations 3m 35s
+Question: What does "enum" allow you to do?
+Answer: An enum allows us to restrict certain values within classes. We are able set those values the specific class can use. This is handy because it locks out potential errors because if you assign a class restricted by an enum a wrong value it will not build properly.
+
+4.6 Using typedef 2m 17s
+Question: When would you define your own data type versus use an enum?
+Answer: We would define our own data type when we want to cut down on retyping large amounts of code, specifically when we plan on using a data type like enum throughout our entire project. I would imagine that we would use enums by themselves within classes or functions, but would likely want to define it as a data type if we needed it elsewhere.
+
+4.7 Preprocessor directives 5m 56s
+Question: Describe the three common preprocessor directives, #import, #define, and #if DEBUG. Come up with one example where you would use each.
+Answer:
+#import: This allows us to import content from a specific file. You would use this load in libraries or frameworks that are built into the device, like foundation.h.
+#define: This allows us to create a macro, or a shortcut, to a defined constant variable we can't and don't want to change. Examples of this would be defining PI, Tau, or Euler’s Number.
+#if DEBUG: It is a conditional that checks before we run the program if the debug condition is met within the if statement; then if it is compiling in debug then it will perform the code inside, otherwise it omits it. Example would be if we want to put in messages, but did not want to have remove them when you release the production, you can put the condition of debug more.
+
+4.8 Working with strings 7m 52s
+Question: Define the same string using both NSString and C-style string syntax. Describe the purpose behind each part of your definition.
+Answer: 
+NSString message = @"Hello, World!";
+NSString: a type defined within the Foundation.h framework
+*: pointer - This the pointer for the variable, message, to NSString - these are required when creating/defining any objects
+message: the name of the variable
+=: Assigning the value to the variable
+@"Hello";: the value of the string - the @ symbol is saying that it is an object, specifically NSString
+
+char message[6]={"Hello"};
+char: this is the type of the variable, in this case character
+message: the name of the array
+[5]: the array with the amount of letters to be expected in the value (although you can leave this blank since we are defining all the initializers)
+=: assigning the value to the variable
+{"Hello"} = defining the values that will be within the character array - in this case, 0 = H, 1 = e, 2 = l, 3 = l, 4 = 0
+
+
+Section 5 - Classes
+
+5.1 Introduction to object orientation 7m 36s
+Create an encapsulated (including generalized attributes and behavior) description of a "mobileMakersParticipant" class. Instantiate a single object representing yourself as a member of this class.
+
+mobileMakersParticipant
+Attributes:
+name
+height
+weight
+gender
+age
+Behaviors:
+design
+think
+program
+
+matthewKish
+Attributes:
+redhead
+funny
+Behaviors:
+sleep
+laugh
+
+mobileMakersParticipant * mKish = [[MobileMakersParticipant alloc] init];
+
+5.2 Using objects and pointers 6m 38s
+Question 1: What is the pointer's role in instantiating an object from a class?
+Answer 1: The pointer is essentially storing the location of the instanced object within memory. It basically allows us to access the object again later because we know its location.
+
+Question 2: How is a pointer different than a primitive?
+Answer 2: A pointer is storing an address to a specific place in memory where an object is stored. Think of it like a shortcut, where you don't have a copy of the object, but rather a shortcut to the object. A primitive is actually storing the value directly.
+
+5.3 Messages and methods 6m 44s
+Question: What is the main difference between Objective-C's messages and method calls in other languages? How can this difference be seen as an advantage while programming?
+Answer: Objective-C sends a message using brackets ([myObject someMethod:arg];), while other languages use the dot syntax (myObject.someMethod(arg);). 
+
+5.4 Using existing classes in the foundation framework 8m 40s
+Question: What's the difference between a class method and an instance method? 
+Answer: Instance methods are defined to only work on an instance (designated by a minus sign), while other methods are defined to work on the class (designated by a plus sign).
+
+EXPLORE: Try typing "NSD..." into your code window. Use the autofill feature and select a single class name that starts with those three letters. Once the name has been auto-completed, use the handy shortcut (Option + click) and investigate the class whose name just got printed to the screen. Examine the task list for this class. Do this a few more times until you're familiar with the process, or until you've exhausted your curiosity, whichever comes last.
+
+
+Section 6 - Memory Management
+6.1 What's new with memory management? 1m 45s
+Let it soak in. No questions for this one.
+
+6.2 Memory management in Objective-C 6m 58s
+Question: What is the relationship between a pointer to an object, a block of memory, and the owning and releasing process? 
+Answer 1: The pointer stores information for which block of memory an object is being stored. At that point, we created the object and we own the block until we put through a release call. On the flip side, if we don't own that object, then we must not release it.
+
+Question 2: Can you come up with an analogy for this relationship?
+Answer 2: The only thing I can think of is farming. You plant a specific type of seed on a plot of land. Then, as they say, "you reap what you sow" - in that if you plant the seeds you have to harvest the plant in the end.
+
+6.3 Object creation 7m 31s
+Question 1: What does the new method do when used to create an object instance of a class? 
+Answer 1: The new method allocates enough memory for the object, then initializes the variables for that object, and finally returns the address to store in the pointer.
+
+Question 2: Why do we avoid using this method?
+Answer 2: We avoid the new method because with init we have many different ways to initialize an object.
+
+Question 3: How long is an object's lifetime?
+Answer 3: An object lasts until it is released.
+
+6.4 Using autorelease pools 5m 14s
+Question: How does the autorelease pool work? How and when can you use it deliberately?
+Answer: When autorelease is called for an object, it is added to the autorelease pool. Once the pool is drained each one of the objects within the pool gets released. You would use this when you want to release an object from within a function, but only after you return the value of the object. You would do this by using autorelease before the return.
+
+6.5 Apple autoreleased objects 3m 39s
+Question: What does NARC stand for? Why is it important to remember this?
+Answer: NARC stands for: new alloc retain copy. These are the signifiers for ownership of an object and that you need release calls.
+
+6.6 Introduction to Automatic Reference Counting (ARC) 4m 43s
+Question: What does ARC save us from having to do? How does it keep us from having to make this extra effort?
+Answer: You do not have to make release, autorelease, or retain calls with ARC. The compiler actually sifts through our code and releases the objects at the correct times.
+
+6.7 What ARC manages 2m 42s
+Question: What are the differences between ARC and garbage collection? What makes these differences advantageous?
+Answer: ARC manages memory at compile time while Garbage Collection manages memory at runtime. Our compiler puts in the code before the code is even run, so we don't need to worry about managing memory while the app is running.
+
+6.8 The rules of ARC 4m 20s
+Question: Why can you not release or dealloc memory when working with ARC?
+Answer: ARC disallows this because it does this automatically. XCode will throw an error if you attempt to release or dealloc because it doesn't want that information, because it will do it automatically during the compilation stage.
+
+
+Section 7 - Custom Classes
+
+7.1 Creating your own classes 14m 1s
+Question: What are the two different sections used to create a class? What do they hold and what files are they placed in? 
+Answer: The two sections are interface and implementation. Interface is in a .h file and it holds information on what this class is planning to do and what is available. Implementation is in a .m file and it holds the real code of the class.
+
+CHALLENGE: Create a Tweet class for a twitter style app.
+-- In file called TwitterStyle
+
+7.2 Defining methods 8m 36s
+CHALLENGE: Define what should get passed in and what should get returned by each of your methods in your Tweet class above.
+-- In file called TwitterStyle
+
+7.3 Defining properties 7m 21s
+Question: How did Objective-C programmers handle instance variables before 2012? How are they handled now? What got easier and what got obscured?
+Answer: Before 2012, instance variables were defined within the interface of the class inside curly braces. Now the instance variables have gone away and we just use @property statements. You can still use instance variables, but you enter them in the implementation layer instead. For the most part you don't need to input nearly as much information about variables within an object. At the same time, some of the behavior has been hidden, specifically things that the compiler handles.
+
+7.4 Defining initializers 12m 30s
+Question 1: What are initializers and why do we need to use them?
+Answer 1: Initializers make sure to create an object in a valid state, setting the variables to appropriate amounts.
+
+Question 2: Describe a situations when you can rely on the standard init method and when you have to create your own custom initializer.
+Answer 2: You can rely on the standard init method when you the variables that are being set do not need to have a specific value. You would use a custom one in that case, because you may have a specific value in mind.
+
+7.5 Using dealloc 5m 33s
+Question: Why can we have a dealloc method in a class when using ARC, but we can't call dealloc manually ourselves when using ARC?
+Answer: Dealloc was previously used to release internal objects from a class - a clean up. Now, ARC automatically calls the dealloc method at the end of an object's lifetime. You can write our own custom dealloc methods, for example to close off a connection, but we are not allowed to call or initialize them. This is because, like what was mentioned before, you cannot release objects on your own.
+
+
+Section 8 - Collections
+
+8.1 Working with C-style arrays 7m 12s
+Question: What are the three constraints when using C-style arrays?
+Answer: 
+1. There is no bounds checking
+2. Fixed array size, cannot change after creation
+3. Cannot mix variable types
+
+Create a C-style array that holds the days of the week.
+NSString *daysOfWeekArray[7] = {@"Sunday",@"Monday",@"Tuesday",@"Wednesday",@"Thursday",@"Friday",@"Saturday"};
+
+
+8.2 Working with Objective-C array objects 8m 0s
+Question: What is the difference between a mutable and an immutable array?
+Answer: Immutable means that you cannot change/ add or remove from it once it is created.
+
+CHALLENGE: Create an immutable array containing the days of the week. Create a mutable array that contains the days of the week that you will be at Mobile Makers. Add the days of the week from the immutable array to the mutable array.
+--Within ArraysOfTheWeek
+
+8.3 Using dictionaries 5m 55s
+Create a dictionary that lists five or more events in your life and the accompanying year (or date if you want to get fancy) of the event.
+--Within LifeEvents
+
+8.4 Fast enumeration 3m 27s
+Use fast enumeration to log the timeline of the life events you described above to the console.
+--Within LifeEvents
+
+
+Section 9 - File Management
+9.1 Introduction to file management in Objective-C 6m 44s
+Question: What can you do with files using the methods you are aware of that are available in Objective C's Foundation class.
+Answer: Move, find, rename, copy, delete, get the attributes of, etc.
+
+9.2 Working with paths and URLs 7m 17s
+Question 1: What are the three parts of a URL? 
+Answer 1: Scheme, domain, and path.
+
+Question 2: What are the advantages to using NSURL?
+Answer 2: They are faster to access than string paths, reduce the amount of errors, and are used by more of the built-in classes that Apple provides.
+
+9.3 Reading and writing strings 4m 38s
+Question: What would be a reason you would want to write a string to disk instead of just keeping it memory?
+Answer: You can save it as a backup, external use by another program, or to pull that information back any time later.
+
+9.4 Archiving objects 12m 41s
+Question: Why would you want to archive an object instead of writing the data to disk using the techniques discussed previously?
+Answer: Archiving affords many of the same benefits of writing to disk, but you also have the information encoded with the information of your filesystem. It can more directly integrate into your system.
+
+
+Section 10 - More Complex Classes
+
+10.1 Inheritance and NSObject 8m 13s
+Question 1: How can you determine what methods you're inheriting from a super class?
+Answer 1: Option-clicking and looking at the super class object will tell you the methods you are inheriting.
+
+Question 2: How do you override a method inherited from a super class?
+Answer 2: Write a method in your class using the same signature as the one in the superclass and it will override it.
+
+10.2 Extending classes with categories 6m 31s
+Question: What is the difference between a category and an inheritance? What are the limitations of using a category?
+Answer: Categories allow us to add our methods to an existing class without having to create a subclass. Inheritance you are creating a new subclass based off of the original, superclass and filling your own methods etc. The main limitation of categories is that you cannot add new instance variables when using them.
+
+10.3 Defining protocols 5m 14s
+Question: How are protocols useful?
+Answer: You can for standardize interaction between objects. What this means is that these protocols force you to meet requirements via methods that, in the end, make things line up perfectly. It is a way to make sure that things are properly fitted before continuing.
+
+10.4 Dynamic typing 11m 33s
+Question: What are the advantages and disadvantages to dynamic typing?
+Answer: The advantages of dynamic typing seem to be that it allows you to be more immediate and flexible with your coding and have your decisions checked at runtime. The disadvantages of this are obviously that unless you are very familiar with the language, you are likely to have issues and may not know about them until you are ready to run.

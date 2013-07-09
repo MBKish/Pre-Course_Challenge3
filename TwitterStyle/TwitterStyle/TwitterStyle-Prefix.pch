@@ -1,0 +1,7 @@
+//
+// Prefix header for all source files of the 'TwitterStyle' target in the 'TwitterStyle' project
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+#endif
